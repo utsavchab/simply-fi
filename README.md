@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+## Live Server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can access the live server at [https://simply-fi-server.onrender.com](https://simply-fi-server.onrender.com).
 
-Currently, two official plugins are available:
+## API Endpoints
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Get User Information
 
-## Expanding the ESLint configuration
+Retrieve user information by providing the account number.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Endpoint:** `/api/passbook/:accountNumber`
+- **Method:** GET
+- **Parameters:**
+  - `accountNumber` (String): The account number of the user you want to retrieve.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Add Transaction
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Add a transaction to the passbook of a specific user.
+
+- **Endpoint:** `/api/passbook/:accountNumber`
+- **Method:** POST
+- **Parameters:**
+  - `accountNumber` (String): The account number of the user to whom you want to add the transaction.
+
+#### Example
+
+To add a transaction to the passbook of the user with account number `0192837465`, make a POST request to:
+
+
+
+
+## Getting Started
+
+To set up your own instance of this React App, follow these steps:
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies by running: `npm install`
+4. Run the React app: `npm run dev`
