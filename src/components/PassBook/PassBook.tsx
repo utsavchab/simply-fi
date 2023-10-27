@@ -10,7 +10,7 @@ const PassBook: React.FC = () => {
     <div className="passbook">
       <h2>Passbook</h2>
 
-      {userInfo ? <PassBookTable /> : <h3>Login To see your passbook</h3>}
+      {userInfo.name ? <PassBookTable /> : <h3>Login To see your passbook</h3>}
     </div>
   )
 }

@@ -16,17 +16,47 @@ const App: React.FC = () => {
     dispatch(getUserInfo())
   }, [dispatch])
 
+  if (userInfo.isLoading) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <h1>SimplyFi</h1>
+        <p> Please Wait Loading...</p>
+      </div>
+    )
+  }
+
+  if (userInfo.isError) {
+    return (
+      <div className="App">
+        <Navbar userName={userInfo.name} />
+        <h1>Server is Down</h1>
+      </div>
+    )
+  }
   return (
     <div className="App">
       <Router>
         <Navbar userName={userInfo.name} />
-        <SideBar />
-        <div className="main-screen">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/passbook" element={<PassBook />} />
-          </Routes>
-        </div>
+        {userInfo.isError ? (
+          <h1>Server is Down</h1>
+        ) : (
+          <>
+            <SideBar />
+
+            <div className="main-screen">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/passbook" element={<PassBook />} />
+              </Routes>
+            </div>
+          </>
+        )}
       </Router>
     </div>
   )

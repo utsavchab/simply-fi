@@ -17,7 +17,7 @@ const initialState: userInfo = {
   name: '',
   accountNumber: '',
   ifscCode: '',
-  isLoading: true,
+  isLoading: false,
   isError: false,
 }
 
@@ -68,6 +68,7 @@ const userInfoSlice = createSlice({
       .addCase(getUserInfo.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
+        window.alert('Server is Down')
         console.error(`Error: ${action.payload}`)
       })
       .addCase(logoutUser.fulfilled, () => {

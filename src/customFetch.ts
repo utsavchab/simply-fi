@@ -1,6 +1,6 @@
 import axios from 'axios'
 const customFetch = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://simply-fi-server.onrender.com/api',
 })
 
 export default customFetch
