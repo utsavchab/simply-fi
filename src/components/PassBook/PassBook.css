@@ -1,0 +1,38 @@
+.passbook {
+  text-align: center;
+  padding: 20px;
+}
+
+.transaction-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.transaction-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.transaction-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.transaction-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.transaction-table td {
+  text-align: left;
+}
+
+.transaction-table th,
+.transaction-table td {
+  text-align: center;
+}
